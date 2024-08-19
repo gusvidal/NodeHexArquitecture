@@ -1,0 +1,24 @@
+npm i pg
+npm i -D @types/pg
+npm i express
+npm i @types/express
+npm i -D ts-node typescript
+
+#inicializa un proyecto typescript
+npx tsc --init
+
+configuración del archivo tsconfig
+Descomentamos el atributo baseUrl del modulo compileoptions
+Moidificamos outdir para que quede de la siguiente forma: "outDir": "./dist/" del modulo compileoptions                             
+Comentamos esta linea "esModuleInterop": true,
+
+
+Ejecutamos npm init -y para iicializar
+
+modificamos el archivo package.json de la siguiente manera
+
+"scripts": {
+    "start": "node dist/main.js",
+    "build": "npx tsc ./src/main.ts --outDir ./dist/",
+    "dev": "npx ts-node ./src/main.ts"
+  },
